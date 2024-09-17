@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/Num1"
+        android:layout_width="155dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="Enter Number 1"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/Num2"
+        android:layout_width="179dp"
+        android:layout_height="47dp"
+        android:ems="10"
+        android:hint="Enter Number 2"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/Num1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Num1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ANS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:hint="Select Operation to calculate Answer"
+        android:inputType="none"
+        android:focusable="false"
+        app:layout_constraintBottom_toTopOf="@+id/b_Add"
+        app:layout_constraintEnd_toEndOf="@+id/Num2"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toEndOf="@+id/Num1"
+        app:layout_constraintTop_toBottomOf="@+id/Num2" />
+
+    <Button
+        android:id="@+id/b_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="@+id/ANS"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/ANS"
+        app:layout_constraintTop_toBottomOf="@+id/ANS" />
+
+    <Button
+        android:id="@+id/b_Subtract"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subtract"
+        app:layout_constraintBottom_toBottomOf="@+id/b_Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/b_Add"
+        app:layout_constraintTop_toTopOf="@+id/b_Add" />
+
+    <Button
+        android:id="@+id/b_Multiply"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Multiply"
+        app:layout_constraintEnd_toEndOf="@+id/b_Add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/b_Add"
+        app:layout_constraintTop_toBottomOf="@+id/b_Add" />
+
+    <Button
+        android:id="@+id/b_Divide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Divide"
+        app:layout_constraintEnd_toEndOf="@+id/b_Subtract"
+        app:layout_constraintStart_toStartOf="@+id/b_Subtract"
+        app:layout_constraintTop_toBottomOf="@+id/b_Subtract" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
