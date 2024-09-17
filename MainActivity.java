@@ -1,61 +1,144 @@
-package com.example.displaymessage;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
+package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
-    public final static String EXTRA_MESSAGE = "com.example.russ.simple_user_interface";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // log what we are doing
-        Log.w("SimpleUserInterface", "MainActivity.onCreate() was called");
+        // Action when "Add" button is pressed
+        Button addButton = findViewById(R.id.b_Add);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                performAddition();
+            }
+        });
+
+        // Action when "Subtract" button is pressed
+        Button subtractButton = findViewById(R.id.b_Subtract);
+        subtractButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                performSubtraction();
+            }
+        });
+
+        // Action when "Multiply" button is pressed
+        Button multiplyButton = findViewById(R.id.b_Multiply);
+        multiplyButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                performMultiplication();
+            }
+        });
+
+        // Action when "Divide" button is pressed
+        Button divideButton = findViewById(R.id.b_Divide);
+        divideButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                performDivision();
+            }
+        });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+    // Method to perform addition
+    private void performAddition() {
+        Log.d("ADD BUTTON", "User tapped the Add button");
+
+        double d1 = 0.0;
+        double d2 = 0.0;
+        double answer = 0.0;
+
+        EditText textN1 = findViewById(R.id.Num1);
+        EditText textN2 = findViewById(R.id.Num2);
+        EditText textANS = findViewById(R.id.ANS);
+
+        try {
+            d1 = Double.parseDouble(textN1.getText().toString());
+            d2 = Double.parseDouble(textN2.getText().toString());
+            answer = d1 + d2;
+        } catch (Exception e) {
+            Log.w("ADD BUTTON", "Add Selected with no inputs ... " + answer);
+        }
+
+        textANS.setText(Double.toString(answer));
+        Log.w("ADD BUTTON", "Add Selected with => " + d1 + " + " + d2 + "=" + answer);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+    // Method to perform subtraction
+    private void performSubtraction() {
+        Log.d("SUBTRACT BUTTON", "User tapped the Subtract button");
 
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
+        double d1 = 0.0;
+        double d2 = 0.0;
+        double answer = 0.0;
 
-        return super.onOptionsItemSelected(item);
+        EditText textN1 = findViewById(R.id.Num1);
+        EditText textN2 = findViewById(R.id.Num2);
+        EditText textANS = findViewById(R.id.ANS);
+
+        try {
+            d1 = Double.parseDouble(textN1.getText().toString());
+            d2 = Double.parseDouble(textN2.getText().toString());
+            answer = d1 - d2;
+        } catch (Exception e) {
+            Log.w("SUBTRACT BUTTON", "Subtract Selected with no inputs ... " + answer);
+        }
+
+        textANS.setText(Double.toString(answer));
+        Log.w("SUBTRACT BUTTON", "Subtract Selected with => " + d1 + " - " + d2 + "=" + answer);
     }
 
-    /** Called when the user clicks the Send button */
-    public void sendMessage(View view) {
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
+    //Method to perform Multiplication
+    private void performMultiplication(){
+        Log.d("MULTIPLY BUTTON", "User tapped the Multiply button");
 
-        // log what we are doing
-        Log.w("SimpleUserInterface", "Starts DisplayMessageActivity with =>" + message);
+        double d1 = 0.0;
+        double d2 = 0.0;
+        double answer = 0.0;
 
-        startActivity(intent);
+        EditText textN1 = findViewById(R.id.Num1);
+        EditText textN2 = findViewById(R.id.Num2);
+        EditText textANS = findViewById(R.id.ANS);
+
+        try{
+            d1 = Double.parseDouble(textN1.getText().toString());
+            d2 = Double.parseDouble(textN2.getText().toString());
+            answer = d1 * d2;
+        } catch (Exception e) {
+            Log.w("MULTIPLY BUTTON", "Multiply Selected with no inputs ... " + answer);
+        }
+
+        textANS.setText(Double.toString(answer));
+        Log.w("MULTIPLY BUTTON", "Multiply Selected with => " + d1 + " * " + d2 + "=" + answer);
     }
 
+    //Method to perform Division
+    private void performDivision(){
+        Log.d("DIVIDE BUTTON", "User tapped the Divide button");
+
+        double d1 = 0.0;
+        double d2 = 0.0;
+        double answer = 0.0;
+
+        EditText textN1 = findViewById(R.id.Num1);
+        EditText textN2 = findViewById(R.id.Num2);
+        EditText textANS = findViewById(R.id.ANS);
+
+        try{
+            d1 = Double.parseDouble(textN1.getText().toString());
+            d2 = Double.parseDouble(textN2.getText().toString());
+            answer = d1 / d2;
+        } catch (Exception e){
+            Log.w("DIVIDE BUTTON", "Divide Selected with no inputs ... " + answer);
+        }
+        textANS.setText(Double.toString(answer));
+        Log.w("DIVIDE BUTTON", "Divide Selected with => " + d1 + " / " + d2 + "=" + answer);
+    }
 }
