@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+
+    <ImageView
+        android:id="@+id/marc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_512_1_"
+        android:layout_centerHorizontal="true">
+    </ImageView>
+
+    <EditText
+        android:id="@+id/Num1"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:hint="Enter 1st Number"
+        android:layout_below="@+id/marc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number">
+    </EditText>
+
+    <EditText
+        android:id="@+id/Num2"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/Num1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter 2nd Number"
+        android:inputType="number">
+    </EditText>
+
+
+
+
+    <EditText
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/Num2"
+        android:id="@+id/ANS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Answer goes here"
+        android:focusable="false">
+    </EditText>
+
+    <ImageButton
+        android:id="@+id/b_Add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ANS"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/goodplus">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/b_Subtract"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ANS"
+        android:layout_toRightOf="@id/b_Add"
+        android:src="@drawable/goodminus"
+        android:layout_height="wrap_content">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/b_Multiply"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/b_Add"
+        android:src="@drawable/goodmultiply"
+        android:layout_height="wrap_content">
+    </ImageButton>
+
+    <ImageButton
+        android:id="@+id/b_Divide"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/b_Add"
+        android:layout_toRightOf="@id/b_Multiply"
+        android:src="@drawable/gooddivide"
+        android:layout_height="wrap_content">
+    </ImageButton>
+
+
+    <TextView
+        android:id="@+id/myTextView"
+        android:text="Extra Large View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="16dp"
+        android:gravity="center" >
+    </TextView>
+
+</RelativeLayout>

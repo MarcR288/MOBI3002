@@ -62,6 +62,7 @@ public class DisplayMessageActivity extends AppCompatActivity {
         Log.v("SimpleUserInterface", " getText =>" + textView.getText());
         Log.v("SimpleUserInterface", " getText.length =>" + textView.getText().length());
 
+
         try {
             Thread.sleep(0);
         } catch (java.lang.InterruptedException e) {
