@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.example.m03_bounce.BouncingBallView
+        android:id="@+id/custView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        custom:circleColor="#ff0099"
+        custom:circleLabel="Hello"
+        custom:labelColor="#ffff66"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onAddButtonClick"
+        android:text="Add Ball"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.491"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.386" />
+
+    <Button
+        android:id="@+id/button_clear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onClearButtonClick"
+        android:text="Clear Balls"
+        custom:layout_constraintBottom_toBottomOf="parent"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintHorizontal_bias="0.529"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent"
+        custom:layout_constraintVertical_bias="0.903" />
+
+
+    <SeekBar
+        android:id="@+id/seekBar_Color"
+        android:layout_width="168dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="48dp"
+        android:max="255"
+        android:progressTint="#36970f"
+        android:thumbTint="#36970f"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Color"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="48dp"
+        android:text="Color="
+        android:textColor="#36970f"
+        custom:layout_constraintStart_toStartOf="@+id/custView"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar_X"
+        android:layout_width="168dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="88dp"
+        android:max="100"
+        android:progressTint="#36970f"
+        android:thumbTint="#36970f"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_X"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="84dp"
+        android:text="X="
+        android:textColor="#36970f"
+        custom:layout_constraintStart_toStartOf="@+id/custView"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar_Y"
+        android:layout_width="168dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="128dp"
+        android:max="100"
+        android:progressTint="#36970f"
+        android:thumbTint="#36970f"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Y"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="128dp"
+        android:text="Y="
+        android:textColor="#36970f"
+        custom:layout_constraintStart_toStartOf="@+id/custView"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar_DX"
+        android:layout_width="168dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="172dp"
+        android:max="1000"
+        android:progressTint="#36970f"
+        android:thumbTint="#36970f"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_DX"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="172dp"
+        android:text="DX="
+        android:textColor="#36970f"
+        custom:layout_constraintStart_toStartOf="@+id/custView"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar_DY"
+        android:layout_width="168dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="216dp"
+        android:max="1000"
+        android:progressTint="#36970f"
+        android:thumbTint="#36970f"
+        custom:layout_constraintStart_toStartOf="parent"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_DY"
+        android:layout_width="84dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="216dp"
+        android:text="DY="
+        android:textColor="#36970f"
+        custom:layout_constraintStart_toStartOf="@+id/custView"
+        custom:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ball_name_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Enter Ball Name"
+        android:textColor="#36970f"
+        custom:layout_constraintEnd_toEndOf="parent"
+        custom:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
