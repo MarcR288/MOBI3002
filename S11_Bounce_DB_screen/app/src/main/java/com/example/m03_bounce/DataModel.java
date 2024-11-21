@@ -60,5 +60,7 @@ public class DataModel {
     public float getModelDY() {
         return this.dy; // Corrected to return dy instead of dx
     }
+
+
 }
 
